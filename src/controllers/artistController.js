@@ -258,16 +258,16 @@ const deleteArtistById = asyncHandler(async (req, res) => {
 const getSingleArtistById = asyncHandler(async (req, res) => {
   try {
     // Fetch logged-in user
-    const loggedInUser = req.user;
-    console.log("logeed", loggedInUser);
+    // const loggedInUser = req.user;
+    // console.log("logeed", loggedInUser);
 
-    // Check if user is an admin
-    if (!loggedInUser || loggedInUser.role !== process.env.IS_ADMIN) {
-      return res.status(403).json({
-        success: false,
-        message: "Unauthorized! Only admins can view single artists.",
-      });
-    }
+    // // Check if user is an admin
+    // if (!loggedInUser || loggedInUser.role !== process.env.IS_ADMIN) {
+    //   return res.status(403).json({
+    //     success: false,
+    //     message: "Unauthorized! Only admins can view single artists.",
+    //   });
+    // }
 
     const { artistId } = req.params;
     // Validate artist Id

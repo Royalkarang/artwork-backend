@@ -1,6 +1,6 @@
 const express = require("express");
 const artistController = require("../../controllers/artistController");
-const { verifyJWT } = require("../../middleware/authMiddleware");
+const { verifyJWT, optionalVerifyJWT } = require("../../middleware/authMiddleware");
 
 const artistRoute = express.Router();
 
@@ -20,10 +20,9 @@ artistRoute.delete(
 
 artistRoute.get(
   "/get-singleArtist/:artistId",
-  verifyJWT,
   artistController.getSingleArtistById
 );
 
-artistRoute.get("/get-artists", artistController.getAllArtists);
+artistRoute.get("/get-artists",optionalVerifyJWT, artistController.getAllArtists);
 
 module.exports = artistRoute;
