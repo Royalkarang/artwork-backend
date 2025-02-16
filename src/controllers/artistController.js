@@ -167,7 +167,7 @@ const updateArtist = asyncHandler(async (req, res) => {
 
 const getAllArtists = asyncHandler(async (req, res) => {
   try {
-    // // Fetch logged user
+    // Fetch logged user
     // const loggedInUser = req.user;
 
     // if (!loggedInUser || loggedInUser.role !== process.env.IS_ADMIN) {

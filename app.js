@@ -10,15 +10,9 @@ const app = express();
 // Use morgan middleware with the "dev" format
 app.use(morgan("dev"));
 
-// app.use(
-//   cors({
-//     origin: process.env.CORS_ORIGIN,
-//     credentials: true,
-//   })
-// );
 app.use(
   cors({
-    origin: '*',  
+    origin: process.env.CORS_ORIGIN,
     credentials: true,
   })
 );
